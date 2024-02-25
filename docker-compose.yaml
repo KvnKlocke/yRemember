@@ -1,0 +1,19 @@
+services:
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_USER: root
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: yes
+      MARIADB_USER: admin
+      MARIADB_PASSWORD: admin
+      MARIADB_DATABASE: yremember_db
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
